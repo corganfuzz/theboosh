@@ -1,0 +1,40 @@
+import TweetBox from "./components/TweetBox.jsx"
+import TweetsList from "./components/TweetsList"
+
+//let mockTweets = [
+//    {id: 1, name: 'Gerald Ruiz', body: 'My #FirstTweet'},
+//    {id: 2, name: 'Gerald Ruiz', body: 'My #FirstTweet'},
+//    {id: 3, name: 'Gerald Ruiz', body: 'My #FirstTweet'}
+//];
+
+class Main extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { tweetsList: []};
+    }
+
+    addTweet(tweetToAdd) {
+
+        let newTweetsList = this.state.tweetsList;
+        newTweetsList.unshift({id: Date.now(), name: 'Guest', body: tweetToAdd});
+
+        this.setState({ tweetsList: newTweetsList});
+    }
+    render() {
+        return (
+           <div className="container">
+               <TweetBox sendTweet={this.addTweet.bind(this)} />
+               <TweetsList tweets={this.state.tweetsList}/>
+               </div>
+        );
+    }
+}
+
+let documentReady = () => {
+    ReactDOM.render(
+    <Main />,
+        document.getElementById('react')
+    );
+};
+
+$(documentReady);
