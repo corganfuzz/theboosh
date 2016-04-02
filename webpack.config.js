@@ -13,16 +13,11 @@ module.exports = {
             {
 
                 test: /\.jsx$/,
-
                 exclude: /node_modules/,
-
                 loader: "babel-loader",
-
                 query: {
-
                     cacheDirectory: true,
-
-                    presets: ['es2016', 'react']
+                    presets: ['react', 'es2016']
 
                 }
 

@@ -1,7 +1,10 @@
+import React from 'react';
+import BooshActions from "../actions/BooshActions";
 export default class TweetBox extends React.Component {
 sendTweet(event) {
     event.preventDefault();
-    this.props.sendTweet(this.refs.tweetTextArea.value);
+
+    BooshActions.sendBoosh(this.refs.tweetTextArea.value);
     this.refs.tweetTextArea.value = '';
 }
 

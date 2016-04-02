@@ -1,5 +1,21 @@
 Rails.application.routes.draw do
+
+  resources :followers do |r|
+    collection do
+      get 'random'
+    end
+  end
+
+  resources :booshes
+  get 'profile/index'
+
+  get 'profile' => 'profile#index'
+  patch 'profile' => 'profile#update'
+
+
+  devise_for :users
   root "home#index"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
