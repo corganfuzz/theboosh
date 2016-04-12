@@ -1,0 +1,108 @@
+<nav class="teal">
+  <div class="container">
+    <div class="nav-wrapper">
+      <a href="" class="brand-logo center">Boosh</a>
+      <ul class="right side-nav" id="nav-mobile" style="transform: translateX(-100%);">
+        <li class="hide-on-small-only"><a href=""><i class="mdi-navigation-arrow-back"></i></a></li>
+      </ul>
+      <a class="button-collapse" href="#" data-activates="nav-mobile"><i class="mdi-navigation-menu"></i></a>
+    </div>
+  </div>
+</nav>
+<div class="parallax-container">
+  <div class="parallax">
+    <img src="/assets/parallax1.jpg" style="display: block; transform: translate3d(-50%, 423px, 0px);"></div>
+</div>
+<div class="section white">
+  <div class="row container">
+
+
+    <p class="grey-text text-darken-3 lighten-3">  </p>
+
+    <div id="login-page" class="row ">
+
+
+
+
+      <div class="col s12 m6  z-depth-6 card-panel">
+        <h2 class="header">Log in </h2>
+      <%= form_for(resource,:html => {:class => 'login-form'} ,as: resource_name, url: session_path(resource_name)) do |f| %>
+
+            <div class="row margin">
+              <div class="input-field col s12 center">
+                <img src="http://w3lessons.info/logo.png" alt="" class="responsive-img valign profile-image-login">
+                <p class="center login-form-text">Create a new account. It's free</p>
+              </div>
+            </div>
+
+            <div class="row margin">
+              <div class="input-field col s12">
+                <i class="mdi-communication-email prefix"></i>
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true %>
+              </div>
+            </div>
+
+            <div class="row margin">
+              <div class="input-field col s12">
+                <i class="mdi-action-lock-outline prefix"></i>
+          <%= f.label :password %><br />
+          <%= f.password_field :password, autocomplete: "off" %>
+              </div>
+            </div>
+
+            <div class="row margin">
+              <div class="input-field col s12">
+        <% if devise_mapping.rememberable? -%>
+
+              <%= f.check_box :remember_me %>
+              <%= f.label :remember_me %>
+
+        <% end -%>
+</div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+          <%= f.submit "Log in", class: "btn waves-effect waves-light col s12" %>
+
+</div>
+            </div>
+
+    <% end %>
+        </div>
+</div>
+
+    <%= render "devise/shared/links" %>
+
+
+
+  </div>
+</div>
+
+<div class="parallax-container">
+  <div class="parallax">
+    <img src="/assets/parallax2.jpg" style="display: block; transform: translate3d(-50%, 423px, 0px);"></div>
+</div>
+<footer class="page-footer teal" style=margin-top:0;">
+  <div class="container">
+    <div class="row">
+      <div class="col l4 s12">
+        <h5 class="white-text">Help Boosh Grow</h5>
+        <p class="grey-text text-lighten-4">
+          We hope you have enjoyed using Materialize! If you feel Materialize
+          has helped you out and want to support the team, send us over a donation!
+          Any amount would help support and continue development on this project
+          and is greatly appreciated.</p>
+</div>
+   </div>
+      </div>
+  <div class="footer-copyright">
+    <div class="container">
+      © 2014-2016 PriamTEK, All rights reserved.
+      <a class="grey-text text-lighten-4 right" href="https://github.com/Dogfalo/materialize/blob/master/LICENSE">MIT License</a>
+    </div>
+  </div>
+</footer>
+
+
+
